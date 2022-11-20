@@ -55,7 +55,7 @@ export class DeckService {
 
   static drawCards = (deckID: string, drawAmount: number) => {
     const deckIndex = DeckService.findDeckIndex(deckID);
-    if (DECKS[deckIndex].remaining > drawAmount) {
+    if (DECKS[deckIndex].remaining >= drawAmount) {
       const cards = DECKS[deckIndex].cards.splice(0, drawAmount);
       DECKS[deckIndex].remaining -= drawAmount;
       return {
