@@ -33,6 +33,8 @@ app.use(
 );
 app.use('/api/deck', deck);
 
-server.listen(3001, (): void => {
-  console.log(`Connected successfully on port ${3001}`);
+const PORT = process.env.PORT || 5000
+
+server.listen(5000, (): void => {
+  console.log(`Connected successfully on port ${PORT}`);
 });
