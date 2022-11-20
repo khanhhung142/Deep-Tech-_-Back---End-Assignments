@@ -74,7 +74,7 @@ export class DeckService {
   static reShuffle = (deckID: string) => {
     const deckIndex = DeckService.findDeckIndex(deckID);
     DECKS[deckIndex].remaining = 52;
-    DECKS[deckIndex].cards = CARDS;
+    DECKS[deckIndex].cards = structuredClone(CARDS);
     DeckService.shuffleDeck(this.findDeckIndex(deckID));
     return deckID;
   };
